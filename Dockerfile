@@ -1,9 +1,9 @@
-FROM maven:3.9-eclipse-temurin-8
+FROM eclipse-temurin:8-jre
 
-COPY . .
+WORKDIR /app
 
-RUN mvn package -DskipTests
+COPY server.jar server.jar
 
 EXPOSE 25565
 
-CMD ["java", "-jar", "server.jar"]
+CMD ["java", "-jar", "server.jar", "nogui"]
