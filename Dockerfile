@@ -2,7 +2,7 @@ FROM eclipse-temurin:8-jre
 
 WORKDIR /app
 
-COPY server.jar server.jar
+COPY . .
 
 EXPOSE 25565
 
