@@ -1,12 +1,10 @@
-FROM eclipse-temurin:8-jdk
+FROM maven:3.9-eclipse-temurin-8
 
 WORKDIR /app
 
 COPY . .
 
-RUN chmod +x mvnw
-
-RUN ./mvnw package -DskipTests
+RUN mvn package -DskipTests
 
 EXPOSE 25565
 
